@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"path/filepath"
 	"strings"
 )
 
@@ -10,4 +11,7 @@ func main() {
 	fmt.Println(str)
 	ary := strings.Split(str,"--")
 	fmt.Println(ary)
+	path := "/Users/liulong/person/code/learn_go/str_join/main.go"
+	dir := filepath.Dir(path)
+	fmt.Println(dir)
 }
