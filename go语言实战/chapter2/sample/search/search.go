@@ -51,5 +51,5 @@ func Run(searchTerm string) {
 
 	//启动函数，显示返回的结果，并且
 	//在最后一个结果显示完后返回
-	Disp
+	Display(results)
 }

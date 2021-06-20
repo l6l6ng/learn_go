@@ -1,6 +1,7 @@
 package main
 
 import (
+	"learn_go/go语言实战/chapter2/sample/search"
 	"log"
 	"os"
 )
@@ -14,5 +15,5 @@ func init()  {
 //main是整个程序的入口
 func main()  {
 	//使用特定的项做搜索
-
+	search.Run("president")
 }
