@@ -36,6 +36,7 @@ func Run(searchTerm string) {
 		//启动一个goroutine来执行搜索
 		go func(matcher Matcher, feed *Feed) {
 			Match(matcher, feed, searchTerm, results)
+			waitGroup.Done()
 		}(matcher, feed)
 	}
 
