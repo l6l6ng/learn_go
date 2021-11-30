@@ -5,13 +5,19 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"sync"
 )
 
 var strUrl string = "https://juejin.cn/post/7035160857633882120"
 
 func main() {
-	for i := 0; i < 1; i++ {
+	total := 10
+	var wg = sync.WaitGroup{}
+	wg.Add(total)
+
+	for i := 0; i < total; i++ {
 		go func(i int) {
+			defer wg.Done()
 			resp, err := http.Get(strUrl)
 			if err != nil {
 				log.Println("error", i)
@@ -19,11 +25,13 @@ func main() {
 
 			defer resp.Body.Close()
 
-			res, err := ioutil.ReadAll(resp.Body)
+			_, err = ioutil.ReadAll(resp.Body)
 			if err != nil {
 				log.Println(resp.StatusCode)
 			}
-			fmt.Printf("%s\n", res)
+			fmt.Printf("%d\n", i)
 		}(i)
 	}
+
+	wg.Wait()
 }
