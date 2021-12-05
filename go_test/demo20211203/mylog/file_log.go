@@ -45,4 +45,5 @@ func (f *FileLogger) Debug(format string, a ...interface{}) {
 		format)
 	fmt.Fprintf(f.logFile, format, a...)
 	fmt.Fprintln(f.logFile)
+	defer f.logFile.Close()
 }
