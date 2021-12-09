@@ -12,8 +12,8 @@ func quicksort(ary []int) []int {
 	if len(ary) < 2 {
 		return ary
 	}
-	left := make([]int, 0)
-	right := make([]int, 0)
+	left := make([]int, len(ary))
+	right := make([]int, len(ary))
 	for i := 1; i < len(ary); i++ {
 		if ary[i] < ary[0] {
 			left = append(left, ary[i])
