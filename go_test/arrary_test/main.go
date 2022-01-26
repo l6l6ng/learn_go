@@ -16,6 +16,8 @@ func (u user) notify() {
 	fmt.Printf("Sending User Email to %s<%s>\n", u.name, u.email)
 }
 
+
+
 // changeEmail 使用指针接收者实现了一个车方法
 func (u *user) changeEmail(email string) {
 	u.email = email
