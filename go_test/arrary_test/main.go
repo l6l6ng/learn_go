@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+
+
 // user在程序中定义一个user类型
 type user struct {
 	name  string
