@@ -10,6 +10,8 @@ type user struct {
 	email string
 }
 
+
+
 // notify 使用值接收者实现了一个方法
 func (u user) notify() {
 	fmt.Printf("Sending User Email to %s<%s>\n", u.name, u.email)
