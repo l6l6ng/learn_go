@@ -40,6 +40,7 @@ func main() {
 	lisa.changeEmail("lisa@newdomain.com")
 	lisa.notify()
 
+
 	test := user{}
 	test.notify()
 }
